@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="amount_Activity" xml:space="preserve">
+    <value>مقدار الحسم نشاط</value>
+  </data>
+  <data name="amount_Behavior" xml:space="preserve">
+    <value>مقدار حسم السلوك</value>
+  </data>
+  <data name="amount_perseverance" xml:space="preserve">
+    <value>مقدار حسم المواظبة</value>
+  </data>
+  <data name="Arrange_Infraction" xml:space="preserve">
+    <value>ترتيب المخالفة</value>
+  </data>
+  <data name="Arrest" xml:space="preserve">
+    <value>توقيف</value>
+  </data>
+  <data name="Arrest_AdminPenalty" xml:space="preserve">
+    <value>الجزاءالاداري</value>
+  </data>
+  <data name="Arrest_Fix" xml:space="preserve">
+    <value>توقيف ثابت</value>
+  </data>
+  <data name="Arrest_Hours" xml:space="preserve">
+    <value>عدد ايام التوقيف</value>
+  </data>
+  <data name="Arrest_Repeat" xml:space="preserve">
+    <value>اعادة التوقيف</value>
+  </data>
+  <data name="Assure" xml:space="preserve">
+    <value>تعهد</value>
+  </data>
+  <data name="Assure_UserID" xml:space="preserve">
+    <value>رمز جهة التعهد</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>الغاء الدوره</value>
+  </data>
+  <data name="Cancel_MateralID" xml:space="preserve">
+    <value>رقم مادة الغاء الدوره</value>
+  </data>
+  <data name="Cancel_nu" xml:space="preserve">
+    <value>رقم فقرة الغاء الدوره</value>
+  </data>
+  <data name="Cancel_nu1" xml:space="preserve">
+    <value>رقم بند الغاء الدوره</value>
+  </data>
+  <data name="Cancel_UserID" xml:space="preserve">
+    <value>رمز جهة الالغاء</value>
+  </data>
+  <data name="code_Sanction" xml:space="preserve">
+    <value>رمز المخالفة</value>
+  </data>
+  <data name="dis_Activity" xml:space="preserve">
+    <value>حسم نشاط</value>
+  </data>
+  <data name="dis_Activity_fix" xml:space="preserve">
+    <value>حسم نشاط ثابت</value>
+  </data>
+  <data name="dis_Behavior" xml:space="preserve">
+    <value>حسم سلوك</value>
+  </data>
+  <data name="dis_Behavior_fix" xml:space="preserve">
+    <value>خسم سلوك ثابت</value>
+  </data>
+  <data name="dis_day" xml:space="preserve">
+    <value>عدد ايام الحسم</value>
+  </data>
+  <data name="dis_perseverance" xml:space="preserve">
+    <value>حسم مواظبة</value>
+  </data>
+  <data name="dis_salary" xml:space="preserve">
+    <value>حسم مرتب</value>
+  </data>
+  <data name="dis_salary_fix" xml:space="preserve">
+    <value>حسم مرتب ثابت</value>
+  </data>
+  <data name="fix_perseverance" xml:space="preserve">
+    <value>حسم مواظبة ثابت</value>
+  </data>
+  <data name="Id_Sactions" xml:space="preserve">
+    <value>معرف المخالفة</value>
+  </data>
+  <data name="Materials_deprivation" xml:space="preserve">
+    <value>حرمان الماده</value>
+  </data>
+  <data name="Materials_deprivationValue" xml:space="preserve">
+    <value>قيمة الحرمان</value>
+  </data>
+  <data name="Materials_DisDegree" xml:space="preserve">
+    <value>حسم درجات الماده</value>
+  </data>
+  <data name="Materials__DisRatio" xml:space="preserve">
+    <value>درجة الحسم</value>
+  </data>
+  <data name="name_Infraction" xml:space="preserve">
+    <value>مسمى المخالفة</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="Rep_Infraction" xml:space="preserve">
+    <value>تكرار المخالفة</value>
+  </data>
+  <data name="San_CategoryID" xml:space="preserve">
+    <value>نوع المخالفه</value>
+  </data>
+  <data name="system_Activity" xml:space="preserve">
+    <value>نظام حسم النشاط</value>
+  </data>
+  <data name="system_Behavior" xml:space="preserve">
+    <value>نظام حسم السلوك</value>
+  </data>
+  <data name="system_perseverance" xml:space="preserve">
+    <value>نظام حسم المواظبة</value>
+  </data>
+  <data name="Warrning" xml:space="preserve">
+    <value>انذار</value>
+  </data>
+  <data name="Warrning_UserID" xml:space="preserve">
+    <value>رمز جهة الانذار</value>
+  </data>
+</root>

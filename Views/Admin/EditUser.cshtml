@@ -1,0 +1,199 @@
+﻿
+@model Service.DataLayer.ProjectManagement.ViewModels.EditUserViewModel
+
+@using Microsoft.AspNetCore.Identity;
+
+
+
+
+@{
+    ViewBag.Title = "AccountForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "تحديث  مستخدم";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>تحديث مستخدم </h2>
+    </div>
+    @*@if (Model.ErrorMessage != "")
+        {
+            <div class="alert alert-danger">
+
+
+                @Model.ErrorMessage
+
+
+            </div>
+        }*@
+
+<div class="panel-body">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    @using (Html.BeginForm("EditUser", "Admin"))
+    {
+        <div class="form-group col-md-6">
+            <label class="col-md-6">@Resource.Username *</label>
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control col-md-6", @onchange = "LoadUserInfo()" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+
+        <hr />
+        @*<fieldset class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="col-md-6">@Resource.Password </label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control col-md-6" })
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-6">@Resource.ConfirmPassword </label>
+                    @Html.PasswordFor(m => m., new { @class = "form-control col-md-6" })
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    </div>
+                </div>
+            </fieldset>*@
+
+        @*@Html.HiddenFor(m => m.Id)*@
+        @Html.AntiForgeryToken()
+<div class="form-group col-md-12">
+    <button type="submit" class="btn btn-primary">حفظ</button>
+    <a asp-action="ListUsers" class="btn btn-default" style="width:auto">رجوع</a>
+</div>        
+            }
+        </div>
+
+    <div id="PlaceHolderHere"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>صلاحيات الحساب</h2>
+            </div>
+            <div class="panel-body">
+                @if (Model.Roles.Any())
+                {
+                    foreach (var role in Model.Roles)
+                    {
+                        <p class="btn btn-info">
+                            @role
+                        </p>
+                        @*<h5 class="card-title">@role</h5>*@
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">لايوجد صلاحيات المستخدم</h5>
+                }
+                @*@foreach (var role in Model.Roles)
+                    {
+                        <p class="btn btn-success btn-sm">
+                            @role.Name
+                        </p>
+                    }*@
+
+            </div>
+            <div class="form-group col-md-12">
+                <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addRole"
+                        data-url="@Url.Action($"ManageUserRoles/{Model.Id}")">
+                    إدارة الصلاحيات
+                </button>
+                @*<a asp-action="ManageUserRoles" asp-route-userId="@Model.Id"
+                   class="btn btn-primary">
+                    إدارة الصلاحيات
+                </a>*@
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>الصلاحيات </h2>
+            </div>
+
+            <div class="panel-body">
+                @if (Model.Claims.Any())
+                {
+                    foreach (var claim in Model.Claims)
+                    {
+                        <p class="btn btn-info">
+                            @claim
+                        </p>
+                        @*<h5 class="card-title">@claim</h5>*@
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">لايوجد صلاحيات لهذا المستخدم</h5>
+                }
+
+            </div>
+            <div class="form-group col-md-12">
+                <a asp-action="ManageUserClaims" asp-route-userId="@Model.Id"
+                   style="width:auto" class="btn btn-primary">
+                    إدارة أجزاء النظام
+                </a>
+            </div>
+        </div>
+
+    </div>
+@*@section scripts
+{*@
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="/Scripts/moment-hijri/moment-hijri.js"></script>
+
+    <script>
+        function LoadUserInfo() {
+            var str = $("#Username").val();
+            $.ajax({
+                url: "/Account/Search?username=" + str,
+                method: "GET"
+            }).done(function (data) {
+                if (data) {
+                    $("#FirstName").val(data.FirstName);
+                    $("#FatherName").val(data.FatherName);
+                    $("#GrandFatherName").val(data.GrandFatherName);
+                    $("#LastName").val(data.LastName);
+                    $("#Cin").val(data.Cin);
+                    $("#GradeId").val(data.GradeId);
+                    $("#ForceId").val(data.ForceId);
+                    $("#DivisionId").val(data.DivisionId);
+                    $("#TrainingLocationId").val(data.TrainingLocationId);
+                } else {
+                    $("#FirstName").val("");
+                    $("#FatherName").val("");
+                    $("#GrandFatherName").val("");
+                    $("#LastName").val("");
+                    $("#Cin").val("");
+                    $("#GradeId").val(0);
+                    $("#ForceId").val(0);
+                    $("#DivisionId").val(0);
+                    $("#TrainingLocationId").val(0);
+
+                }
+
+            });
+        }
+
+        $(function () {
+            var calendar = $.calendars.instance('ummalqura', 'ar');
+            $('.date').calendarsPicker({ calendar: calendar });
+        });
+        $('.cert').select2();
+        $('.divis').select2();
+        $('.forc').select2();
+        $('.depart').select2();
+        $('.area').select2();
+        $('.Spec').select2();
+        $('.Grade').select2();
+        $('.trainin').select2();
+
+
+    </script>
+
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+

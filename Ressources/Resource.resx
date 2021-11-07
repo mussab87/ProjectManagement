@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Center" xml:space="preserve">
+    <value>مقر الدورة</value>
+  </data>
+  <data name="CenterName" xml:space="preserve">
+    <value>إسم المعهد</value>
+  </data>
+  <data name="CourseNumber" xml:space="preserve">
+    <value>رقم الدورة</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاريخ النهاية هجري</value>
+  </data>
+  <data name="ForceId" xml:space="preserve">
+    <value>القوة</value>
+  </data>
+  <data name="ForceName" xml:space="preserve">
+    <value>إسم القوة</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>إسم الدورة</value>
+  </data>
+  <data name="NumberOfSeatsMax" xml:space="preserve">
+    <value>عدد المقاعد كحد أعلى</value>
+  </data>
+  <data name="NumberOfWeeks" xml:space="preserve">
+    <value>عدد الأسابيع</value>
+  </data>
+  <data name="requirement" xml:space="preserve">
+    <value>شروط الدورة حقل إجباري</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البداية هجري</value>
+  </data>
+  <data name="TrainingLocationId" xml:space="preserve">
+    <value>السلاح</value>
+  </data>
+  <data name="WeaponName" xml:space="preserve">
+    <value>إسم السلاح</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>العام التدريبي</value>
+  </data>
+  <data name="GradeName" xml:space="preserve">
+    <value>الرتبة</value>
+  </data>
+  <data name="SpecialityName" xml:space="preserve">
+    <value>التخصص</value>
+  </data>
+  <data name="DivisionName" xml:space="preserve">
+    <value>إسم الوحدة</value>
+  </data>
+  <data name="AreaName" xml:space="preserve">
+    <value>إسم المنطقة</value>
+  </data>
+  <data name="CertificationName" xml:space="preserve">
+    <value>إسم الشهادة العلمية</value>
+  </data>
+  <data name="AccountCin" xml:space="preserve">
+    <value>رقم الهوية</value>
+  </data>
+  <data name="AccountFatherName" xml:space="preserve">
+    <value>إسم الأب</value>
+  </data>
+  <data name="AccountFirstName" xml:space="preserve">
+    <value>الإسم الأول</value>
+  </data>
+  <data name="AccountGrandFatherName" xml:space="preserve">
+    <value>إسم الجد</value>
+  </data>
+  <data name="AccountLastName" xml:space="preserve">
+    <value>العائلة</value>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="DateLastPromotion" xml:space="preserve">
+    <value>تاريخ آخر ترقية</value>
+  </data>
+  <data name="DateStartWork" xml:space="preserve">
+    <value>تاريخ التعيين</value>
+  </data>
+  <data name="DivisionId" xml:space="preserve">
+    <value>الوحدة</value>
+  </data>
+  <data name="PrivateNumber" xml:space="preserve">
+    <value>الرقم الخاص</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>إسم القسم</value>
+  </data>
+  <data name="DepartmentParent" xml:space="preserve">
+    <value>القسم الرئيسي</value>
+  </data>
+  <data name="CourseType" xml:space="preserve">
+    <value>نوع الدورة</value>
+  </data>
+  <data name="NumberOfSeatsMin" xml:space="preserve">
+    <value>عدد المقاعد كحد أدنى</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>إسم المستخدم</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>إعادة كلمة السر</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>إسم مجموعة الصلاحيات</value>
+  </data>
+  <data name="dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="JoinDate" xml:space="preserve">
+    <value>تاريخ الإضافة</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>آخر تسجيل دخول</value>
+  </data>
+  <data name="Logins" xml:space="preserve">
+    <value>عدد مرات تسجيل الدخول</value>
+  </data>
+  <data name="RolesPermissions" xml:space="preserve">
+    <value>صلاحيات المجموعات</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="UsersRoles" xml:space="preserve">
+    <value>مجموعات الصلاحيات</value>
+  </data>
+  <data name="LinkRoleToAccount" xml:space="preserve">
+    <value>إضافة صلاحية لمستخدم</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>الصلاحية</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>صلاحية الوصول</value>
+  </data>
+  <data name="CanAdd" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="CanDelete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="CanEdit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CanView" xml:space="preserve">
+    <value>قراءة</value>
+  </data>
+  <data name="Controller" xml:space="preserve">
+    <value>الرابط</value>
+  </data>
+  <data name="CourseCode" xml:space="preserve">
+    <value>رمز الدورة</value>
+  </data>
+  <data name="Causes" xml:space="preserve">
+    <value>أسباب الرفض إن وجدت</value>
+  </data>
+  <data name="FinalApprove" xml:space="preserve">
+    <value>موافق </value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>الترشح</value>
+  </data>
+  <data name="DataManagement" xml:space="preserve">
+    <value>إدارة البيانات</value>
+  </data>
+  <data name="Applied" xml:space="preserve">
+    <value>لقد ترشحت لهذه الدورة</value>
+  </data>
+  <data name="ApplyToPeriod" xml:space="preserve">
+    <value>الترشح للدورة</value>
+  </data>
+  <data name="CourseLocation" xml:space="preserve">
+    <value>مكان الدورة</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>الفترة</value>
+  </data>
+  <data name="WeaponImg" xml:space="preserve">
+    <value>رفع شعار السلاح</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="WebApi" xml:space="preserve">
+    <value>نظام الترشيح</value>
+  </data>
+  <data name="StatusName" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="NameBanks" xml:space="preserve">
+    <value>اسم البنك</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>ادارة</value>
+  </data>
+  <data name="QuestionName" xml:space="preserve">
+    <value>نص السؤال</value>
+  </data>
+  <data name="addcontent" xml:space="preserve">
+    <value>اضافة محتوى</value>
+  </data>
+  <data name="ExamForm" xml:space="preserve">
+    <value>اسم النموذج</value>
+  </data>
+  <data name="Exam" xml:space="preserve">
+    <value>الاختبار</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>الاسئلة</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالة الحساب</value>
+  </data>
+  <data name="DegreeQuestion" xml:space="preserve">
+    <value>درجة السؤال</value>
+  </data>
+  <data name="TitleQuestion" xml:space="preserve">
+    <value>عنوان السؤال</value>
+  </data>
+  <data name="CounterCourses" xml:space="preserve">
+    <value>الدورات</value>
+  </data>
+  <data name="CounterExam" xml:space="preserve">
+    <value>عدد الاختبارات</value>
+  </data>
+  <data name="HelpTraining" xml:space="preserve">
+    <value>جناح مساعدات التدريب</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="non-active" xml:space="preserve">
+    <value>غير مفعل</value>
+  </data>
+  <data name="createFromExam" xml:space="preserve">
+    <value>تم انشاء النمودج بنجاح</value>
+  </data>
+  <data name="LevelTypeQuestion" xml:space="preserve">
+    <value>مستوى السؤال</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>المحتوى</value>
+  </data>
+  <data name="TeachingHours" xml:space="preserve">
+    <value>نصاب المعلم</value>
+  </data>
+  <data name="projectsList" xml:space="preserve">
+    <value>قائمة المشاريع</value>
+  </data>
+</root>

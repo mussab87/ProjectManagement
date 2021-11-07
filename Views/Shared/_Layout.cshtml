@@ -1,0 +1,27 @@
+﻿
+<!DOCTYPE html>
+<html>
+<partial name="_HeaderPartial" />
+<body>
+    <partial name="_NavBar" />
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="col-md-12">
+            <footer>
+                <p>- نظام إدارة ومتابعة الشاريع - &copy; جميع الحقوق محفوظة القوات البرية الملكية السعودية @DateTime.Now.Year </p>
+            </footer>
+        </div>
+    </div>
+
+    <partial name="_ScriptExtenstions" />
+
+    @RenderSection("scripts", false)
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker({ format: 'dd-mm-yyyy' });
+    });
+</script>

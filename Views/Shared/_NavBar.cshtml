@@ -1,0 +1,206 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+<partial name="_HeadPartial" />
+<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top: 100px;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-top-menu-collapse navbar-right">
+            <ul class="nav navbar-nav ">
+                @if (signInManager.IsSignedIn(User))
+
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="/Home/home">
+                            <i class="fa fa-home fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#">
+                            |
+                        </a>
+                    </li>
+                }
+
+                @* إعدادات النظام *@
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="/Courses/PublishedCourses" data-toggle="dropdown">
+                            <i class="fa fa fa-cogs"></i> إعدادات النظام<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="/Admin/Dashboard">
+
+                                    لوحة التحكم
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/Admin/ListUsers">
+
+                                    إدارة المستخدمين
+                                </a>
+                            </li>
+
+                            @*<li class="dropdown-submenu">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                        <i class="fa fa-poll"></i> التقارير
+                                    </a>
+                                    <ul class="dropdown-menu">
+
+                                            <li>
+                                                <a href="/Courses/report">
+                                                    التقارير
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/Courses/reportUsers">
+                                                    تقارير المستخدمين
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                        <i class="fa fa-database"></i> إدارة البيانات
+                                    </a>
+                                    <ul class="dropdown-menu">
+
+                                            <li>
+                                                <a href="/Certifications/CertificatedSignManag">
+
+                                                    إدارة التواقيع
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/Subjects/Index">
+                                                    إدارة المقررات
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/WeekPeriods/Index">
+                                                    إدارة الأسابيع الدراسية
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/Sanctions/Index">
+                                                    إدارة الجزاءات و العقوبات
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/SchoolDays/Index">
+                                                    إدارة الأيام الدراسية
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/Rooms/Index">
+                                                    إدارة القاعات الدراسية
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/TimeSessions/Index">
+                                                    إدارة الحصص الدراسية
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/EvaluationPs/Index">
+                                                    إدارة تقييم الدورة
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/EvaluationTs/Index">
+                                                    إدارة تقييم المعلم
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/EvaluationSts/Index">
+                                                    إدارة تقييم الطالب
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/coursetypes/Index">
+                                                    إدارة انواع الدورات
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/coursetypes/ListDegree">
+                                                    ادارة توزيع الدرجات/ الدورة
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/LinkPage/AddsubjectDegree">
+                                                    ادارة توزيع الدرجات/ للمقرر
+                                                </a>
+                                            </li>
+
+                                    </ul>
+                                </li>*@
+
+                        </ul>
+                    </li>
+                }
+
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin") || User.IsInRole("User"))
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            @{
+                                var text = "المشاريع";
+                            }
+                            <i class="fa fa-id-card-alt"></i> @text<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="/ProjectManagement/Index">
+                                    قائمة المشاريع
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    جدول المتدربين
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    الدورات
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                }
+
+
+
+                @* ******************************** *@
+
+
+            </ul>
+        </div>
+        <partial name="_LoginPartial" />
+    </div>
+</div>

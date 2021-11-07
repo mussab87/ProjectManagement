@@ -1,0 +1,175 @@
+﻿
+@model Service.DataLayer.ProjectManagement.ViewModels.ProjectDetailsViewModel;
+
+@{
+    ViewBag.Title = "عرض مشروع";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* Project Information *@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>@Model.Project.ProjectNameArabic</h2>
+    </div>
+
+    <div class="panel-body">
+        <table id="DataTable" class="table table-bordered table-hover">
+            @if (Model.Project != null)
+            {
+                <thead>
+                    <tr>
+                        <th>
+                            اسم المشروع عربي
+                        </th>
+                        <th>
+                            إسم المشروع انجليزي
+                        </th>
+                        <th>
+                            تاريخ الانشاء
+                        </th>
+                        <th>منشئ المشروع</th>
+                        <th>تاريخ التعديل</th>
+                        <th>تعديل بواسطة</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td hidden>@Model.Project.ProjectId</td>
+                        <td>
+                            @Model.Project.ProjectNameArabic
+                        </td>
+
+                        <td>@Model.Project.ProjectNameEnglish</td>
+                        <td>@Model.Project.CreatedDate</td>
+                        <td>
+                            @Model.Project.CreatedBy
+                        </td>
+                        <td>@Model.Project.UpdatedDate</td>
+                        <td>
+                            @Model.Project.UpdatedBy
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            }
+            else
+            {
+                <thead>
+                    <tr>
+                        <th>لايوجدمشروع</th>
+                    </tr>
+                </thead>
+            }
+        </table>
+    </div>
+
+    @* ******************************************* *@
+
+    @* Project Phases *@
+    <div class="panel-heading">
+        <h2>مراحل المشروع</h2>
+    </div>
+
+    <div class="panel-body">
+        @if (Model.ProjectPhase != null)
+        {
+            @foreach (var project in Model.Project.ProjectPhaseTbls)
+            {
+        <div class="col-md-12">
+            <div class=" panel-default">
+                <div class="panel-heading">
+                    <strong>@project.ProjectPhaseNameArabic / @project.ProjectPhaseNameEnglish</strong>
+                </div>
+                <div class="panel-body text-center">
+                    
+                    <table id="DataTable" class="table table-bordered table-hover">
+
+                        <tbody>
+                            @foreach (var phase in project.ProjectPhaseLevelTbls)
+                            {
+
+                            <tr>
+                                
+                                <td>
+                                    @phase.ProjectPhaseLevelNameArabic / @phase.ProjectPhaseLevelNameEnglish
+                                </td>
+                                @foreach (var eval in phase.ProjectPhaseLevelEvalTbls)
+                                {
+                                    <td>
+                                        @eval.ProjectPhaseLevelEvaluation %
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditPhaseAndLevel" asp-controller="ProjectManagement"
+                                           asp-route-ProjectId="@project.ProjectId" 
+                                           asp-route-PhaseId="@project.ProjectPhaseId" 
+                                           asp-route-LevelId="@phase.ProjectPhaseLevelId" 
+                                           asp-route-EvalId="@eval.ProjectPhaseLevelEvalId" 
+                                           class="btn btn-sm btn-warning">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </a>
+                                    </td>
+                                }
+
+                            </tr>
+                              }
+
+                        </tbody>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+            }
+
+            @*<table id="DataTable" class="table table-bordered table-hover">
+               
+                <tbody>
+                    @foreach (var project in Model.Project.ProjectPhaseTbls)
+                    {
+                        <tr>
+                            <td hidden>@project.ProjectId</td>
+                            <td hidden>@project.ProjectPhaseId</td>
+                            <td>
+                                @project.ProjectPhaseNameArabic
+                            </td>
+                            <td>
+                                @project.ProjectPhaseNameEnglish
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>*@
+        }
+        else
+        {
+            <br />
+            <div class="panel-info">
+                <div class="col-lg-4">
+                    <a class="btn btn-lg btn-info btn-block" style="width:auto" asp-action="InsertProjectPhases"
+                       asp-controller="ProjectManagement" asp-route-ProjectId="@Model.Project.ProjectId">إضافة مراحل المشروع</a>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    @* ******************************************* *@
+
+
+
+</div>
+
+    
+    
+
+    @*@section scripts
+        {*@
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="/Scripts/moment-hijri/moment-hijri.js"></script>
+
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+

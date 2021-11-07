@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>IdentityServer4.EntityFramework.Storage</id>
+    <version>4.1.2</version>
+    <authors>Brock Allen,Dominick Baier,Scott Brady</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.jpg</icon>
+    <projectUrl>https://github.com/IdentityServer/IdentityServer4</projectUrl>
+    <description>EntityFramework persistence layer for IdentityServer4</description>
+    <releaseNotes>https://github.com/IdentityServer/IdentityServer4/releases</releaseNotes>
+    <tags>OAuth2 OAuth 2.0 OpenID Connect Security Identity IdentityServer EntityFramework</tags>
+    <repository type="git" url="https://github.com/IdentityServer/IdentityServer4" commit="997a6cdd643e46cd5762b710c4ddc43574cbec2e" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AutoMapper" version="[10.0.0, 11.0.0)" exclude="Build,Analyzers" />
+        <dependency id="IdentityServer4.Storage" version="4.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

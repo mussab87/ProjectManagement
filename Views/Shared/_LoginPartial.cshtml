@@ -1,0 +1,39 @@
+﻿
+
+@inject SignInManager<ApplicationUser> signInManager;
+
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Admin") || User.IsInRole("User"))
+{
+    @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-left" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <i class="fa fa-user"></i>  @User.Identity.Name
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        @*<a asp-action="" href="/Account/UserProfile?id=@User.Identity.Name">معلومات الحساب</a>*@
+
+                        <a asp-action="UserProfile" asp-controller="Account"
+                           asp-route-id="@User.Identity.Name">معلومات الحساب</a>
+                    </li>
+                    <li>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">تسجيل خروج</a>
+                        @*<a asp-action="Logout" asp-controller="Account">تسجيل خروج</a>*@
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li>@Html.ActionLink("تسجيل دخول", "Login", "Account", null, new { id = "loginLink" })</li>
+    </ul>
+}

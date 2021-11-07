@@ -1,0 +1,121 @@
+﻿
+@model IEnumerable<ProjectTbl>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "لوحة التحكم";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>قائمة المشاريع</h2>
+    </div>
+    <div class="panel-body">
+        <div class="panel-info">
+            <div class="col-lg-4">
+                <a class="btn btn-lg btn-info btn-block" style="width:auto" asp-action="AddProject"
+                   asp-controller="ProjectManagement">إضافة مشروع جديد</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        
+        
+        <table id="DataTable" class="table table-bordered table-hover">
+            @if (Model.Any())
+            {
+                <thead>
+                    <tr>
+                        
+                        <th>
+                            اسم المشروع عربي
+                        </th>
+                        <th>
+                            إسم المشروع انجليزي
+                        </th>
+                        <th>
+                            تاريخ الانشاء
+                        </th>
+
+                        <th>منشئ المشروع</th>
+                        <th>تاريخ التعديل</th>
+                        <th>تعديل بواسطة</th>
+                        <th>إدارة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var project in Model)
+                    {
+                        <tr>
+                            <td hidden>@project.ProjectId</td>
+                            <td>
+                                @project.ProjectNameArabic
+                            </td>
+
+                            <td>@project.ProjectNameEnglish</td>
+                            <td>@project.CreatedDate</td>
+                            <td>
+                                @project.CreatedBy
+                            </td>
+                            <td>@project.UpdatedDate</td>
+                            <td>
+                                @project.UpdatedBy
+                            </td>
+                            <td>
+                                <form method="post" asp-action="DeleteProject" asp-route-ProjectId="@project.ProjectId">
+
+                                    <a asp-action="UpdateProject" asp-controller="ProjectManagement"
+                                       asp-route-ProjectId="@project.ProjectId" class="btn btn-sm btn-warning">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </a>
+
+                                    <a asp-action="ReviewProject" asp-controller="ProjectManagement"
+                                       asp-route-ProjectId="@project.ProjectId" class="btn btn-sm btn-warning">
+                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                    </a>
+
+
+                                    <button type="submit" class="btn btn-sm btn-danger js-delete" onclick="return confirm('Are you sure you want to delete user : @project.ProjectNameArabic')">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            }
+            else
+            {
+                <thead>
+                    <tr>
+                        <th>لايوجد مشاريع مضافة</th>
+                    </tr>
+                </thead>
+            }
+        </table>
+
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $("#DataTable").DataTable({
+                "language": {
+                    "search": "البحث :",
+                    "sLengthMenu": "الصفحات : _MENU_ ",
+                    "paginate": {
+                        "previous": "السابق",
+                        "next": "التالي"
+                    },
+                    "info": "الصفحة _START_ من _END_ المجموع : _TOTAL_ ",
+                    "infoEmpty": "لا يوجد عرض",
+                }
+            });
+        });
+
+    </script>
+}

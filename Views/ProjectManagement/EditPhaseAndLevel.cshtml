@@ -1,0 +1,394 @@
+﻿
+@model Service.DataLayer.ProjectManagement.ViewModels.PhaseDetailViewModel
+
+@{
+    ViewBag.Title = "عرض مشروع";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* Project Information *@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>@Model.ProjectNameArabic</h2>
+    </div>
+    <div class="panel-body">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        @using (Html.BeginForm("EditPhaseAndLevel", "ProjectManagement"))
+        {
+
+            <div>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <h3>معلومات المشروع</h3>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-12">
+
+                    <div class="form-group col-md-6">
+                        @Html.HiddenFor(m => m.ProjectId)
+                        <label class="col-md-6" asp-for="ProjectNameArabic"></label>
+                        @Html.TextBoxFor(m => m.ProjectNameArabic, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(m => m.ProjectNameArabic)
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectNameEnglish"> </label>
+                        @Html.TextBoxFor(m => m.ProjectNameEnglish, new { @class = "form-control col-md-6", @readonly = "readonly" })
+
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="CreatedDate"></label>
+                        @Html.TextBoxFor(m => m.CreatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="CreatedBy"></label>
+                        @Html.TextBoxFor(m => m.CreatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="UpdatedDate"></label>
+                        @Html.TextBoxFor(m => m.UpdatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="UpdatedBy"></label>
+                        @Html.TextBoxFor(m => m.UpdatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <div>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-10">
+                        <h3>@Model.ProjectPhaseNameArabic</h3>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-12">
+
+                    <div class="form-group col-md-6">
+                        @Html.HiddenFor(m => m.ProjectPhaseId)
+                        <label class="col-md-6" asp-for="ProjectPhaseNameArabic"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseNameArabic, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseNameEnglish"> </label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseNameEnglish, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseStartDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseStartDate, "{0:yyyy-MM-dd}", new { @class = "form-control col-md-6", @type = "date" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseEndDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseEndDate, "{0:yyyy-MM-dd}", new { @class = "form-control col-md-6", @type = "date", @Value = Model.ProjectPhaseEndDate })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseCreatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseCreatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseUpdatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseUpdatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseCreatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseCreatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseUpdatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseUpdatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <div>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-10">
+                        <h3>@Model.ProjectPhaseNameArabic / @Model.ProjectPhaseLevelNameArabic</h3>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-12">
+
+                    <div class="form-group col-md-6">
+                        @Html.HiddenFor(m => m.ProjectPhaseLevelId)
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelNameArabic"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelNameArabic, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelNameEnglish"> </label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelNameEnglish, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelStartDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelStartDate, "{0:yyyy-MM-dd}", new { @class = "form-control col-md-6", @type = "date", @Value = Model.ProjectPhaseStartDate })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEndDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelEndDate, "{0:yyyy-MM-dd}", new { @class = "form-control col-md-6", @type = "date", @Value = Model.ProjectPhaseEndDate })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLeveCreatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLeveCreatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLeveUpdatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLeveUpdatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLeveCreatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLeveCreatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLeveUpdatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLeveUpdatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <div>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-10">
+                        <h3>@Model.ProjectPhaseNameArabic / @Model.ProjectPhaseLevelNameArabic / تقييم المرحلة</h3>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-12">
+
+                    <div class="form-group col-md-6">
+                        @Html.HiddenFor(m => m.ProjectPhaseLevelEvalId)
+
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEvaluation"></label>
+                        @*@Html.TextBoxFor(m => m.ProjectPhaseLevelEvaluation, new { @class = "form-control col-md-6" })*@
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_AnalysisAnalysis)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "12 %", Value = "12"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_AnalysisReview)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "5 %", Value = "5"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_PrototypeAr)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "5 %", Value = "5"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_ArchetucureDesign)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "12 %", Value = "12"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_ArchetucureReview)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "5 %", Value = "5"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_DevelopmentFront)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "20 %", Value = "20"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_DevelopmentBack)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "20 %", Value = "20"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_TestingDesign)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "7 %", Value = "7"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_TestingExecution)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "8 %", Value = "8"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_ExecutionAr)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "5 %", Value = "8"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                        @if (Model.ProjectPhaseLevelNameArabic == DbConstants.Params.PARAM_DeliveryAr)
+                        {
+                            @Html.DropDownListFor(model => model.ProjectPhaseLevelEvaluation, new List<SelectListItem>
+                            {
+                                 new SelectListItem { Text = "0", Value = "0"},
+                                 new SelectListItem { Text = "5 %", Value = "8"},
+                                  },
+           new
+           {
+               @class = "form-control col-md-6"
+           });
+                        }
+
+                    </div>
+
+                    
+
+                </fieldset>
+               
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEvaCreatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelEvaCreatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEvaUpdatedDate"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelEvaUpdatedDate, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+                <fieldset class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEvaCreatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelEvaCreatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6" asp-for="ProjectPhaseLevelEvaUpdatedBy"></label>
+                        @Html.TextBoxFor(m => m.ProjectPhaseLevelEvaUpdatedBy, new { @class = "form-control col-md-6", @readonly = "readonly" })
+                    </div>
+
+                </fieldset>
+            </div>
+
+            @*@Html.HiddenFor(m => m.Id)*@
+            @Html.AntiForgeryToken()
+            <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary">حفظ</button>
+            </div>
+        }
+    </div>
+</div>
+
+    
+    
+
+    @*@section scripts
+        {*@
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="/Scripts/moment-hijri/moment-hijri.js"></script>
+
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+

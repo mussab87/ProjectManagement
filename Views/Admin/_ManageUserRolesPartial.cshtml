@@ -1,0 +1,52 @@
+﻿@model List<Service.DataLayer.ProjectManagement.ViewModels.UserRolesViewModel>
+
+@{
+    var userId = ViewBag.userId;
+    //Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<div class="modal fade" id="addRole" dir="rtl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addRoleLabel">إضافة صلاحية للمستخدم</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>X</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form controller="Admin" action="ManageUserRoles" >
+
+                    <input type="hidden" id="SelecteduserId" value="@userId" />
+                    <div class="form-group">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <div class="form-check m-1">
+                                <input type="hidden" asp-for="@Model[i].RoleId" />
+                                <input type="hidden" asp-for="@Model[i].RoleName" />
+                                <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                                <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                                    @Model[i].RoleName
+                                </label>
+                            </div>
+                        }
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" data-save="modal" data-url="@Url.Action($"ManageUserRoles")">حفظ</button>
+
+                @*<input type="submit" value="Update" class="btn btn-primary"
+               style="width:auto" />
+        <a asp-action="EditUser" asp-route-id="@userId"
+           class="btn btn-primary" style="width:auto">إلغاء</a>*@
+            </div>
+        </div>
+    </div>
+</div>
+

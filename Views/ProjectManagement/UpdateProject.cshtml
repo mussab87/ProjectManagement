@@ -1,0 +1,91 @@
+﻿
+@model Service.DataLayer.ProjectManagement.ViewModels.ProjectViewModel;
+
+@{
+    ViewBag.Title = "تعديل مشروع";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>تعديل مشروع</h2>
+    </div>
+    
+    <div class="panel-body">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        @using (Html.BeginForm("UpdateProject", "ProjectManagement"))
+        {
+            @Html.HiddenFor(i => i.ProjectId)
+
+            <fieldset class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="ProjectNameArabic"></label>
+                    @Html.TextBoxFor(m => m.ProjectNameArabic, new { @class = "form-control col-md-6" })
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(m => m.ProjectNameArabic)
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="ProjectNameEnglish"> </label>
+                    @Html.TextBoxFor(m => m.ProjectNameEnglish, new { @class = "form-control col-md-6" })
+
+                </div>
+            </fieldset>
+
+            <fieldset class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="CreatedDate"></label>
+                    @Html.TextBoxFor(m => m.CreatedDate, new { @class = "form-control col-md-6" })
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="CreatedBy"> </label>
+                    @Html.TextBoxFor(m => m.CreatedBy, new { @class = "form-control col-md-6" })
+
+                </div>
+            </fieldset>
+
+            <fieldset class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="UpdatedDate"></label>
+                    @Html.TextBoxFor(m => m.UpdatedDate, new { @class = "form-control col-md-6" })
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-6" asp-for="UpdatedBy"> </label>
+                    @Html.TextBoxFor(m => m.UpdatedBy, new { @class = "form-control col-md-6" })
+
+                </div>
+            </fieldset>
+
+            @*@Html.HiddenFor(m => m.Id)*@
+            @Html.AntiForgeryToken()
+            <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary">حفظ</button>
+            </div>
+        }
+    </div>
+    @*<div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>صلاحيات الحساب</h2>
+        </div>
+        <div class="panel-body">
+
+            @foreach (var role in Model.Roles)
+            {
+                <p class="btn btn-success btn-sm">
+                    @role.Name
+                </p>
+            }
+
+        </div>
+    </div>*@
+
+</div>
+@*@section scripts
+{*@
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="/Scripts/moment-hijri/moment-hijri.js"></script>    
+
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+

@@ -1,0 +1,112 @@
+﻿
+@model Service.DataLayer.ProjectManagement.ViewModels.UserClaimsViewModel
+
+@using Microsoft.AspNetCore.Identity;
+
+
+
+
+@{
+    ViewBag.Title = "صلاحيات النظام";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>تحديث صلاحيات شاشات المستخدم  </h2>
+        </div>
+
+        <div class="panel-body">
+
+            <form method="post">
+                <div class="card">
+                    <div class="card-header">
+                        @*<h2>Manage User Claims</h2>*@
+                    </div>
+                    <div class="card-body">
+                        @for (int i = 0; i < Model.Cliams.Count; i++)
+                        {
+                            <div class="form-check m-1">
+                                <input type="hidden" asp-for="@Model.Cliams[i].ClaimType" />
+                                <input asp-for="@Model.Cliams[i].IsSelected" class="form-check-input" />
+                                <label class="form-check-label" asp-for="@Model.Cliams[i].IsSelected">
+                                    @Model.Cliams[i].ClaimType
+                                </label>
+                            </div>
+                        }
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="حفظ" class="btn btn-primary"
+                               style="width:auto" />
+                        <a asp-action="EditUser" asp-route-id="@Model.UserId"
+                           class="btn btn-default" style="width:auto">إلغاء</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        @*<div class="form-group col-md-12">
+            <a asp-action="ManageUserClaims" asp-route-userId="@Model.Id"
+               style="width:auto" class="btn btn-primary">
+                إدارة أجزاء النظام
+            </a>
+        </div>*@
+    </div>
+
+
+
+<script src="/Scripts/moment-hijri/moment-hijri.js"></script>
+
+<script>
+    function LoadUserInfo() {
+        var str = $("#Username").val();
+        $.ajax({
+            url: "/Account/Search?username=" + str,
+            method: "GET"
+        }).done(function (data) {
+            if (data) {
+                $("#FirstName").val(data.FirstName);
+                $("#FatherName").val(data.FatherName);
+                $("#GrandFatherName").val(data.GrandFatherName);
+                $("#LastName").val(data.LastName);
+                $("#Cin").val(data.Cin);
+                $("#GradeId").val(data.GradeId);
+                $("#ForceId").val(data.ForceId);
+                $("#DivisionId").val(data.DivisionId);
+                $("#TrainingLocationId").val(data.TrainingLocationId);
+            } else {
+                $("#FirstName").val("");
+                $("#FatherName").val("");
+                $("#GrandFatherName").val("");
+                $("#LastName").val("");
+                $("#Cin").val("");
+                $("#GradeId").val(0);
+                $("#ForceId").val(0);
+                $("#DivisionId").val(0);
+                $("#TrainingLocationId").val(0);
+
+            }
+
+        });
+    }
+
+    $(function () {
+        var calendar = $.calendars.instance('ummalqura', 'ar');
+        $('.date').calendarsPicker({ calendar: calendar });
+    });
+    $('.cert').select2();
+    $('.divis').select2();
+    $('.forc').select2();
+    $('.depart').select2();
+    $('.area').select2();
+    $('.Spec').select2();
+    $('.Grade').select2();
+    $('.trainin').select2();
+
+
+</script>
+
+
+<script src="~/Scripts/jquery.validate.js"></script>
+

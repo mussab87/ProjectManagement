@@ -1,0 +1,279 @@
+﻿@model IEnumerable<ProjectDetailsViewModel>
+@{
+    Layout = null;
+    ViewBag.Title = "لوحة معلومات";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> مركز تطوير النظم </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/images/logoo.png" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="~/Home/Content/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="~/Home/Content/animate.css" type="text/css">
+    <link rel="stylesheet" href="~/Home/Content/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="~/Home/Content/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Home/Content/jquery.countdown.css" type="text/css">
+    <link rel="stylesheet" href="~/Home/Content/style.css" type="text/css">
+
+    <!-- background -->
+    <link rel="stylesheet" href="~/Home/Content/bg.css" type="text/css">
+
+    <!-- color -->
+    <link rel="stylesheet" href="~/Home/Content/colors/green.css" type="text/css">
+</head>
+
+<body id="homepage">
+
+    <div id="wrapper">
+
+
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+            <div id="top"></div>
+
+            <!-- section begin -->
+            <section id="section-intro-8" class="no-top no-bottom text-light" data-stellar-background-ratio=".2">
+                <div class="overlay-bg t50">
+                    <div class="center-y fadeScroll text-center relative" data-scroll-speed="4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="spacer-single"></div>
+                                    <h1 class="ultra-big">مركز تطوير <span class="id-color">النظم</span></h1>
+                                    <div class="spacer-single"></div>
+                                    <a href="#" class="btn btn-custom">لوحة معلومات المشاريع</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <br />
+
+            <!-- section begin -->
+            <section id="section-fun-facts" class="no-top no-bottom text-light" data-stellar-background-ratio=".2">
+                <div class="overlay-bg pt80 pb80">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-3 wow fadeIn" data-wow-delay=".75s">
+                                <div class="de_count">
+                                    @*<i class="icon_id-2 id-color" data-animation="fadeInDown" data-delay="0"></i>
+                                    <h3 class="timer" data-to="0" data-speed="2500">0</h3>
+                                    <span> الشاريع المتأخرة </span>*@
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 wow fadeIn">
+                                <div class="de_count">
+                                   
+                                        <i></i>
+                                        @if (ViewBag.FinishProjects != null)
+                                        {
+
+                                            <h3>@ViewBag.FinishProjects</h3>
+                                        }
+                                        else
+                                        {
+                                            <h3>0</h3>
+                                        }
+                                        <span>المشاريع المنتهية</span>
+                                    </div>
+                            </div>
+
+                            <div class="col-md-3 wow fadeIn">
+                                <div class="de_count">
+                                    <i></i>
+                                    @if (ViewBag.notFinishProjects != null)
+                                    {
+
+                                        <h3>@ViewBag.notFinishProjects</h3>
+                                    }
+                                    else
+                                    {
+                                        <h3>0</h3>
+                                    }
+                                    <span>المشاريع قيد التنفيذ</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 wow fadeIn">
+                                <div class="de_count">
+                                    <i ></i>
+                                    @if (ViewBag.ProjectsCounts != null)
+                                      {
+                                                
+                                      <h3>@ViewBag.ProjectsCounts</h3>
+                                    }
+                                    else
+                                    {
+                                        <h3>0</h3>
+                                     }
+
+                                    <span>عدد المشاريع</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <!-- section begin -->
+            <section id="section-schedules" aria-label="section-services-tab" data-bgcolor="#f5f5f5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center wow fadeInUp">
+                            <h2><span class="id-color">قائمة المشاريع</span></h2>
+                            <div class="spacer-single"></div>
+                        </div>
+
+
+
+                        <div style="width: 100%">
+                            <table class="table table-bordered" width="100%" style="direction: rtl; text-align: right;">
+
+
+                                <tr style="background-color: #008055; color:white; font-size: 16px; direction:rtl; text-align:center">
+                                    <td rowspan="2">اسم المشروع</td>
+                                    <th colspan="2" scope="colgroup">التحليل</th>
+                                    <th>الواجهات</th>
+                                    <th colspan="2" scope="colgroup">الهيكلية وقواعد البيانات</th>
+                                    <th colspan="2" scope="colgroup">البرمجة والتطوير</th>
+                                    <th colspan="2" scope="colgroup">الاختبار</th>
+                                    <th>التنفيذ</th>
+                                    <th>التسليم</th>
+                                    <th>نسبة الانجاز</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">التحليل</th>
+                                    <th scope="col">مراجعة التحليل</th>
+                                    <th scope="col">تصميم الواجهات</th>
+                                    <th scope="col">تصميم الهيكلية</th>
+                                    <th scope="col">مراجعة الهيكلية</th>
+                                    <th scope="col">التصميم </th>
+                                    <th scope="col">البرمجة</th>
+                                    <th scope="col">تصميم حالات الاختبار </th>
+                                    <th scope="col">تنفيذ الاختبار</th>
+                                    <th scope="col">تنفيذ المشروع</th>
+                                    <th scope="col">تسليم المشروع</th>
+                                    <th scope="col">النسبة</th>
+
+                                </tr>
+
+                                @if (Model.Any())
+                                {
+                                    @foreach (var project in Model)
+                                    {
+                            <tr style="text-align:center;">
+                                <th scope="row">@project.Project.ProjectNameArabic</th>
+                                @foreach (var item in project.ProjectPhaseLevelEval)
+                                {
+                                    <td><h3>@item.ProjectPhaseLevelEvaluation</h3></td>
+                                }
+
+                                @*<td>30,000</td>
+                                <td>100,000</td>
+                                <td>30,000</td>
+                                <td>100,000</td>
+                                <td>30,000</td>
+                                <td>100,000</td>
+                                <td>30,000</td>
+                                <td>100,000</td>
+                                <td>30,000</td>
+                                <td>100,000</td>*@
+                                <td><h2>@project.Percentage %</h2></td>
+
+                            </tr>
+                                        }
+                                    }
+
+                                </table>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+
+
+        </div>
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer>
+            <div class="container text-center text-light">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="" href="index.html">
+                            <img src="~/images/Logoo.png" alt="Logo" width="150" height="140" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="social-icons big">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subfooter">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            &copy; جميع الحقوق محفوظة لإدارة تطوير النظم
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+
+        <a href="#" id="back-to-top"></a>
+        <div id="preloader">
+            <div class="preloader1"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="~/Home/Scripts/jquery.min.js"></script>
+    <script src="~/Home/Scripts/bootstrap.min.js"></script>
+    <script src="~/Home/Scripts/jquery.isotope.min.js"></script>
+    <script src="~/Home/Scripts/easing.js"></script>
+    <script src="~/Home/Scripts/owl.carousel.js"></script>
+    <script src="~/Home/Scripts/jquery.countTo.js"></script>
+    <script src="~/Home/Scripts/wow.min.js"></script>
+    <script src="~/Home/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Home/Scripts/enquire.min.js"></script>
+    <script src="~/Home/Scripts/jquery.stellar.min.js"></script>
+    <script src="~/Home/Scripts/jquery.plugin.js"></script>
+    <script src="~/Home/Scripts/jquery.countdown.js"></script>
+    <script src="~/Home/Scripts/countdown-custom.js"></script>
+
+    <script src="~/Home/Scripts/designesia.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+
